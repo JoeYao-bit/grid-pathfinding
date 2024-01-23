@@ -36,9 +36,7 @@ private:
 
   // body
 protected:
-  // V[y * width + x] = Node with position (x, y)
-  // if (x, y) is occupied then V[y * width + x] = nullptr
-  Nodes V;
+
 
   // something strange
   void halt(const std::string& msg);
@@ -72,16 +70,20 @@ public:
 
   // get width*height
   int getNodesSize() const { return V.size(); }
+
+  // V[y * width + x] = Node with position (x, y)
+  // if (x, y) is occupied then V[y * width + x] = nullptr
+  Nodes V;
+
 };
 
 class Grid : public Graph
 {
-private:
+public:
   std::string map_file;
   int width;
   int height;
 
-public:
   Grid(){};
   Grid(const std::string& _map_file);
   ~Grid(){};
